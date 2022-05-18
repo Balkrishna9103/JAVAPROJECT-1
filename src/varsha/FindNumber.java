@@ -1,0 +1,65 @@
+package varsha;
+class FindNumber{
+	
+	void getDivisibleNo(int startIndex, int endIndex){
+		if(startIndex<endIndex){
+			System.out.println("Numbers divisible by 5 for given range from "+startIndex+ " to " +endIndex+ " are: ");
+			for(int index=startIndex;index<=endIndex;index++){
+				if (index%5==0){
+					System.out.println(index);
+				}	
+		}
+		}else{
+			System.out.println("Please specify valid start and end index");
+		}
+	}
+	
+	void getDivisibleNum(int startIndex, int endIndex){
+		if(startIndex<endIndex){
+			System.out.println("Numbers divisible by 3 & 5 in given range from "+startIndex+ " to " +endIndex+ " are: ");
+			for(int index=startIndex;index<=endIndex;index++){
+				if(index%3==0 && index%5==0){
+					System.out.println(index);
+				}
+			}
+		}else{
+			System.out.println("Please specify valid start and end index");
+		}
+	}
+	
+	void getSumOfNumbers(int startIndex, int endIndex){
+		if(startIndex<endIndex){
+			int sum=0;
+			for(int index=startIndex;index<=endIndex;index++){
+				sum = sum + index;
+			}
+			System.out.println("Sum of numbers from "+startIndex+ " to "+endIndex+ " is: "+sum);
+	}else{
+			System.out.println("Please specify valid start and end index");
+		}
+	}
+	
+	void getOddEvenNumbers(int startIndex, int endIndex){
+		if(startIndex<endIndex){
+			int sumOfOdd=0;
+			int sumOfEven=0;
+			for(int index=startIndex;index<=endIndex;index++){
+				if(index%2==0){
+					sumOfEven = sumOfEven + index;
+				}else{
+					sumOfOdd = sumOfOdd + index;
+				}
+			}
+			System.out.println("Difference of sum of Odd and even numbers between "+startIndex+ " to " +endIndex+ " are: "+(sumOfOdd-sumOfEven));
+		}else{
+			System.out.println("Please specify valid start and end index");
+		}
+	}
+	public static void main(String[] args){
+		FindNumber findNumber = new FindNumber();
+		findNumber.getDivisibleNo(10,30);
+		findNumber.getDivisibleNum(5,18);
+		findNumber.getSumOfNumbers(1,5);
+		findNumber.getOddEvenNumbers(3,9);
+	}
+}
